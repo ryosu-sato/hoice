@@ -163,7 +163,7 @@ make_conf! {
         } {
             |mtch| {
                 let z3_cmd = mtch.to_string();
-                let mut conf = SolverConf::z3();
+                let mut conf = SolverConf::default_z3();
                 conf.cmd(z3_cmd);
                 conf.models();
                 conf

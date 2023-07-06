@@ -1019,8 +1019,7 @@ where
 /// # Examples
 ///
 /// ```rust
-/// # use hoice::common::*;
-/// use hoice::errors::TypError;
+/// use hoice::common::*;
 /// let bool_var = term::bool_var(0);
 /// let int_term = term::add( vec![ term::int_var(1), term::int(7) ] );
 /// let ill_typed = term::try_app( Op::And, vec![ bool_var, int_term ] );

@@ -181,6 +181,10 @@ pub fn read_and_work<R: ::std::io::Read>(
                     preproc::work(& mut instance, & preproc_profiler)
                   } "top preproc"
                 } {
+                    Ok(()) if conf.preproc.print_preproc => {
+                        instance.dump_as_smt2(&mut std::io::stdout(), "arg")?;
+                        ::std::process::exit(0);
+                    },
                     Ok(()) => (),
                     Err(e) => {
                         if e.is_timeout() {

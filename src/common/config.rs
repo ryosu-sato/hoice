@@ -373,6 +373,21 @@ make_conf! {
             |val| bool_of_match(val)
         }
 
+        print_preproc, print_preproc: bool {
+            help "Print and exit after preprocessing.",
+            long_help "\
+                If active, the instance will be printed in the standard output.\
+            ",
+            long "--print_preproc",
+            takes_val,
+            val_name bool_format,
+            val_nb 1,
+            validator bool_validator,
+            default "no",
+        } {
+            |val| bool_of_match(val)
+        }
+
         prune_terms, prune_terms: bool {
             help "(De)activates expensive clause term pruning when simplifying clauses.",
             long_help "\
